@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from pandasai import SmartDataframe
 from pandasai_litellm.litellm import LiteLLM
+from pandasai.llm import OpenAI
 
 # --- UI ---
 st.title("🤖 Pandas_AI – Ask Questions to Your File")
@@ -15,10 +16,8 @@ if uploaded_file:
     st.dataframe(df.head())
 
     # LLM Setup
-    llm = LiteLLM(
-        model="gpt-4.1-mini",
-        api_key=st.secrets["OPENAI_API_KEY"]
-    )
+    llm = OpenAI(
+    api_token=st.secrets["OPENAI_API_KEY"])
 
     sdf = SmartDataframe(df, config={"llm": llm})
 
@@ -28,4 +27,5 @@ if uploaded_file:
         with st.spinner("⏳ Thinking..."):
             response = sdf.chat(question)
             st.write("### 🧾 Answer:")
+
             st.write(response)
