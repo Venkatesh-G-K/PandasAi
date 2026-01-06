@@ -8,7 +8,7 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 # ---------- UI ----------
 st.set_page_config(page_title="Ask CSV with AI", layout="wide")
 st.title("🤖 Ask Questions to Your CSV")
-st.write("Upload a CSV file and ask questions in plain English.")
+st.write("Upload a CSV file and ask questions in any language.")
 
 uploaded_file = st.file_uploader("📂 Upload CSV", type=["csv"])
 
@@ -55,3 +55,4 @@ Answer clearly and concisely.
 else:
     st.info("⬆️ Upload a CSV file to get started.")
 
+st.title("Venkat")
