@@ -1,8 +1,4 @@
 streamlit
-pandas>=2.3.3
-pandasai
-pandasai-litellm
-litellm
-matplotlib
-pydantic
-
+pandas
+pandasai==2.3.2
+openai
