@@ -1,0 +1,8 @@
+streamlit
+pandas>=2.3.3
+pandasai
+pandasai-litellm
+litellm
+matplotlib
+pydantic
+
